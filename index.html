@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXOUF+2c+XQeDvl/9v6fMvQ4xRZpDeIvS/3YHxxvVjGdJ4aUkH13HR5ZC1I5Pz0lZZw7byjA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <h1>Minha Lista de Tarefas</h1>
+
+    <form id="task-form">
+      <input type="text" id="new-task" placeholder="Adicionar nova tarefa..." required />
+      <textarea id="task-desc" placeholder="Descrição da tarefa..."></textarea>
+      <input type="datetime-local" id="task-deadline" />
+      <select id="task-priority">
+        <option value="low">Baixa</option>
+        <option value="medium" selected>Média</option>
+        <option value="high">Alta</option>
+      </select>
+      <input type="file" id="task-file" />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <select id="sort-tasks">
+      <option value="date">Ordenar por Data</option>
+      <option value="priority">Ordenar por Prioridade</option>
+      <option value="status">Ordenar por Status</option>
+      <option value="tag">Ordenar por Tag</option>
+    </select>
+
+    <div id="filters">
+      <label><input type="checkbox" id="filter-completed" /> Concluídas</label>
+      <label><input type="checkbox" id="filter-pending" checked /> Pendentes</label>
+    </div>
+
+    <div id="task-list"></div>
+
+    <button class="theme-toggle" id="toggle-theme">Modo Escuro</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
